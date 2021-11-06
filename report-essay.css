@@ -10,21 +10,24 @@ body{
    font-size:12pt;
    max-width: 21cm; /*A4标准宽度*/
    border:1px solid #CCC ; /* 添加一个淡灰色的边框 */
+   box-shadow: 0 0 5px 5px #CCC;
 }
 /*页边距处理*/
 @media screen{
     #write{
-       padding:2.54cm 3.18cm; 
+       padding:0cm 3.18cm; 
     }
 }
+
 @media print{
     #write{
        padding:0 3.18cm !important; 
        margin:0 !important;
     }
 }
+
 @page{
-	margin:2.54cm 0; /*上下/左右 边距，参考了word的默认边距*/
+    margin:2.5cm 0; /*上下/左右 边距，参考了word的默认边距*/
 }
 
 
@@ -52,7 +55,7 @@ h1 {
 }
 h2 {
 	font-family:仿宋;
-	text-align:center;
+	/*text-align:center;*/
 	font-size:16pt;
 }
 h3 {
@@ -60,7 +63,7 @@ h3 {
 	font-size:14pt;
 }
 h4 {
-	text-align:center;
+	/*text-align:center;*/
 	font-family:楷体;
 	font-size:14pt;
 }
@@ -95,6 +98,7 @@ h4 {
 	font-family:黑体;
 	font-size:10.5pt;
 }
+
 /* @media print{
 	img{
         page-break-inside:avoid !important;
@@ -150,6 +154,9 @@ span.md-fn-count::before{
 span.md-fn-count::after{
     content:']';
 }
+
+
+
 /* 以下开始为自动编号 */
 #write{
     counter-reset: tableHead imgHead write-h2 write-h3 write-h4!important;/*修复缺失上级标题时无法递增*/
@@ -165,21 +172,21 @@ span.md-fn-count::after{
     counter-reset: write-h4;
 }
 /* 表格自动编号 */
-#write figure:after{
+/*#write figure:after{
 	counter-increment: tableHead;
 	content: "表" counter(tableHead) " ";
 	text-align:center;
 	width:100%;
 	display:inline-block;
-}
+}*/
 /* 图片自动编号，导出PDF时暂时无法显示 */
-#write .md-image:after{
+/*#write .md-image:after{
 	counter-increment: imgHead;
 	content: "图" counter(imgHead) attr(alt) " " !important;
 	text-align:center;
 	width:100%;
 	display:inline-block;
-}
+}*/
 /* 编辑器内标题-显示 */
 #write h2:before {
     counter-increment: write-h2;
@@ -276,6 +283,11 @@ span.md-fn-count::after{
 /*基准样式来自 https://support.typora.io/Code-Block-Styles/ */
 code{/* 行内代码 */
     font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 90%;
+    color: #000000;
+    background-color: #f8f8f8;
 }
 /*.cm-s-inner .CodeMirror-matchingbracket {
   text-decoration: underline;
@@ -291,6 +303,7 @@ code{/* 行内代码 */
     color: black;
     border-top: solid 1.5pt black;
     border-bottom: solid 1.5pt black;
+    /*font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;*/
     font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
     font-size: 10pt;
     padding: 5pt;
@@ -317,8 +330,8 @@ code{/* 行内代码 */
 
 /* .cm-s-inner .CodeMirror-activeline-background { background: rgba(255, 255, 255, 0.10); }/* 高亮当前行 */ 
 .cm-s-inner .cm-keyword { color: black; font-weight: bold;}/* 语言关键字 */
-.cm-s-inner .cm-operator { color: black; font-weight:bold;} /* 语言操作符 */
-.cm-s-inner .cm-variable { color: black; font-style: italic;} /* 变量 */
+.cm-s-inner .cm-operator { color: black; } /* 语言操作符 */
+.cm-s-inner .cm-variable { color: black;} /* 变量 */
 .cm-s-inner .cm-variable-2 { color: black; /*font-style: italic;*/ }
 .cm-s-inner .cm-variable-3 { color: black; font-weight: bold;}/* 语言内置类型 */
 .cm-s-inner .cm-builtin { color: black; }
@@ -326,12 +339,12 @@ code{/* 行内代码 */
 .cm-s-inner .cm-def { color: black; }/*函数定义*/
 .cm-s-inner .cm-string { color: gray; font-weight:bold }/* 字符串 */
 .cm-s-inner .cm-string-2 { color: gray; font-weight:bold }/* 字符串 */
-.cm-s-inner .cm-comment { color: gray; }/* 注释 */
+.cm-s-inner .cm-comment { color: gray; font-style: italic;}/* 注释 */
 .cm-s-inner .cm-meta { color: black; }/* 头文件，宏定义等*/
 /* HTML 相关 */
 .cm-s-inner .cm-tag { color: black; font-weight: bold;}/* HTML 标签 */
 .cm-s-inner .cm-attribute { color: black; }
-.cm-s-inner .cm-property { color: black; font-style: italic;}/*CSS属性名称*/
+.cm-s-inner .cm-property { color: black; }/*CSS属性名称*/
 .cm-s-inner .cm-atom { color: black; }/*CSS属性值*/
 .cm-s-inner .cm-qualifier { color: black; font-weight:bold;}/*css选择器等*/
 .cm-s-inner .cm-error {
@@ -362,3 +375,7 @@ h6.md-focus:before {
     font-weight: inherit;
     line-height: inherit;
 }
+
+
+
+
