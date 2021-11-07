@@ -10,7 +10,6 @@ body{
    font-size:12pt;
    max-width: 21cm; /*A4标准宽度*/
    border:1px solid #CCC ; /* 添加一个淡灰色的边框 */
-   box-shadow: 0 0 5px 5px #CCC;
 }
 /*页边距处理*/
 @media screen{
