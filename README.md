@@ -1,5 +1,12 @@
 # report-typora-theme
 
+我们一种有两种主题：
+
+1. 写报告专用的report-markdown.css
+2. 写小论文/大作业文档专用的paper-markdown.css
+
+
+
 ![image-20211106183202996](./a.jpg)
 
 ## 如何使用？
@@ -13,9 +20,9 @@
 1. 打开Typora
 2. 菜单栏“文件”选项卡-偏好设置（Ctrl +,）
 3. 外观-主题-打开主题文件夹themes
-4. 将下载的report-essay.css文件放入此文件夹
+4. 将下载的report-markdown.css文件放入此文件夹
 5. 重启Typora，打开xxx.md文件
-6. 菜单栏“主题”选项卡: report-essay
+6. 菜单栏“主题”选项卡: Report Markdown
 
 ## 样式展示
 
