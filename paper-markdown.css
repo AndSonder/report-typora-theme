@@ -57,7 +57,7 @@ h1 {
 }
 h2 {
 	font-family:Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", STXihei, "Microsoft YaHei", SimHei, "WenQuanYi Micro Hei";
-	/*text-align:center;*/
+	text-align:center;
 	font-size:14pt;
     font-weight:bold;
 }
@@ -176,9 +176,9 @@ span.md-fn-count::after{
     counter-reset: tableHead imgHead write-h2 write-h3 write-h4!important; /*修复缺失上级标题时无法递增*/
 }
 /* 编辑器内标题-重置 */
-#write h1 {
+/* #write h1 {
     counter-reset: write-h2;
-}
+} */
 #write h2 {
     counter-reset: write-h3;
 }
@@ -203,17 +203,19 @@ span.md-fn-count::after{
 }*/
 /* 编辑器内标题-显示 */
 #write h2:before {
-    counter-increment: write-h2;
-    content: counter(write-h2, cjk-ideographic) "、 ";
+    counter-increment: write-h2; 
+    content: "第" counter(write-h2, cjk-ideographic) "章 ";
 }
 #write h3:before {
     counter-increment: write-h3;
     content: counter(write-h2) ". " counter(write-h3) " ";
 }
+
 #write h4:before {
     counter-increment: write-h4;
     content: counter(write-h2) ". " counter(write-h3) ". " counter(write-h4) " ";
 }
+
 /*#write h4:before {
     counter-increment: write-h4;
     content: counter(write-h4, decimal) ". ";
